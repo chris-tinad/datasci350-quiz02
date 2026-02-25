@@ -14,15 +14,13 @@ website:
         text: Life Expectancy & Population
       - href: cambodia_analysis.qmd
         text: Cambodia Analysis
-      - href: quiz02.qmd
-        text: Quiz 02
       - href: about.qmd
         text: About
 
 format:
   html:
     theme:
-      - cosmo
+      - yeti
       - brand
     css: styles.css
     toc: true
