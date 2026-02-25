@@ -14,8 +14,6 @@ website:
         text: Life Expectancy & Population
       - href: cambodia_analysis.qmd
         text: Cambodia Analysis
-      - href: about.qmd
-        text: About
 
 format:
   html:
