@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ChristinaDai_Quiz02"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: life-gdp.qmd
+        text: Life Expectancy & GDP
+      - href: life-population.qmd
+        text: Life Expectancy & Population
+      - href: cambodia_analysis.qmd
+        text: Cambodia Analysis
+      - href: quiz02.qmd
+        text: Quiz 02
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true

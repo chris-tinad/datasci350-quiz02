@@ -1,0 +1,41 @@
+---
+title: "life-gdp.qmd" 
+format: html
+---
+
+# Introduction
+In this analysis, we will explore the relationship between life expectancy and GDP per capita using the Gapminder dataset. We will use python to analyze the data and visualize the results.
+
+# Data Loading
+```{python}
+#| echo: true
+#| label: load-data
+#| message: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load the Gapminder dataset
+gapminder = pd.read_csv("gapminder.csv")
+```
+
+# Graphing
+```{python}
+#| echo: true
+#| label: graph-life-gdp
+#| message: false
+
+plt.figure()
+plt.scatter(
+    gapminder["gdp_per_capita"],
+    gapminder["life_expectancy"],
+)
+
+plt.xlabel("GDP per Capita")
+plt.ylabel("Life Expectancy")
+plt.title("Life Expectancy and GDP per Capita")
+
+plt.show()
+```
+
