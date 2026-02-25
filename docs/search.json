@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ChristinaDai_Quiz02",
+    "section": "",
+    "text": "The Gapminder dataset contains country-level data on life expectancy, GDP per capita, and population across time to study global development trends."
+  },
+  {
+    "objectID": "index.html#datasci-350-quiz-02",
+    "href": "index.html#datasci-350-quiz-02",
+    "title": "ChristinaDai_Quiz02",
+    "section": "",
+    "text": "The Gapminder dataset contains country-level data on life expectancy, GDP per capita, and population across time to study global development trends."
+  },
+  {
+    "objectID": "index.html#website-pages",
+    "href": "index.html#website-pages",
+    "title": "ChristinaDai_Quiz02",
+    "section": "Website Pages",
+    "text": "Website Pages\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\nQuiz 02\nAbout\n\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "life-gdp.qmd",
+    "section": "",
+    "text": "Introduction\nIn this analysis, we will explore the relationship between life expectancy and GDP per capita using the Gapminder dataset. We will use python to analyze the data and visualize the results.\n\n\nData Loading\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Load the Gapminder dataset\ngapminder = pd.read_csv(\"gapminder.csv\")\n\n\n\nGraphing\n\nplt.figure()\nplt.scatter(\n    gapminder[\"gdp_per_capita\"],\n    gapminder[\"life_expectancy\"],\n)\n\nplt.xlabel(\"GDP per Capita\")\nplt.ylabel(\"Life Expectancy\")\nplt.title(\"Life Expectancy and GDP per Capita\")\n\nplt.show()"
+  },
+  {
+    "objectID": "cambodia_analysis.html",
+    "href": "cambodia_analysis.html",
+    "title": "cambodia_analysis.qmd",
+    "section": "",
+    "text": "Introduction\nIn this analysis, we will analyze changes in life expectancy, GDP per capita, and population for Cambodia over time. We will use python to analyze the data and visualize the results.\n\n\nData Loading\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Load the Gapminder dataset\ngapminder = pd.read_csv(\"gapminder.csv\")\n\n# Filter the dataset for Cambodia\ncambodia_data = gapminder[gapminder[\"country\"] == \"Cambodia\"]\n\n\n\nGraphing\n\n# ---- Life Expectancy Over Time ----\nplt.figure()\nplt.plot(cambodia_data[\"year\"], cambodia_data[\"life_expectancy\"]) \nplt.xlabel(\"Year\")\nplt.ylabel(\"Life Expectancy (years)\")\nplt.title(\"Cambodia: Life Expectancy Over Time\")\nplt.show()\n\n\n\n\n\n\n\n\n\n# ---- GDP per Capita Over Time ----\nplt.figure()\nplt.plot(cambodia_data[\"year\"], cambodia_data[\"gdp_per_capita\"])\nplt.xlabel(\"Year\")\nplt.ylabel(\"GDP per Capita\")\nplt.title(\"Cambodia: GDP per Capita Over Time\")\nplt.show()\n\n\n\n\n\n\n\n\n\n# ---- Population Over Time ----\nplt.figure()\nplt.plot(cambodia_data[\"year\"], cambodia_data[\"population_millions\"])\nplt.xlabel(\"Year\")\nplt.ylabel(\"Population\")\nplt.title(\"Cambodia: Population Over Time\")\nplt.show()"
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "life-population.qmd",
+    "section": "",
+    "text": "Introduction\nIn this analysis, we will explore the relationship between population size and life expectancy using the Gapminder dataset. We will use python to analyze the data and visualize the results.\n\n\nData Loading\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Load the Gapminder dataset\ngapminder = pd.read_csv(\"gapminder.csv\")\n\n\n\nGraphing\n\nplt.figure()\nplt.scatter(\n    gapminder[\"population_millions\"],\n    gapminder[\"life_expectancy\"],\n)\n\nplt.xlabel(\"Population (Millions)\")\nplt.ylabel(\"Life Expectancy\")\nplt.title(\"Life Expectancy and Population\")\n\nplt.show()"
+  }
+]
